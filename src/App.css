@@ -1,0 +1,209 @@
+.caraousel-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+.mobile-navigation {
+  display: none;
+}
+.caraousel-item {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  background-blend-mode: multiply;
+  padding: 1em;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 89;
+  font-weight: bold;
+  width: 100vw;
+  overflow-y: hidden;
+}
+.caraousel-item::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.content {
+  max-width: 450px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1em;
+}
+.content p {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.content h1 {
+  font-size: 2.5rem;
+}
+.btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.3em 0.6em;
+  justify-self: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.btn-explore:is(:hover, :focus) {
+  background-color: white;
+  color: black;
+  outline: none;
+  transition: 0.4s;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+.next-btn,
+.prev-btn {
+  position: absolute;
+  top: 50%;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  border-radius: 50%;
+  z-index: 390;
+}
+.next-btn {
+  right: 2%;
+}
+.prev-btn {
+  left: 2%;
+}
+.next-btn:is(:hover, :focus),
+.prev-btn:is(:hover, :focus) {
+  color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+.dots {
+  position: absolute;
+  bottom: 5%;
+  z-index: 1000;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.dot {
+  background-color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.dot:hover {
+  background-color: #f2eaeafc;
+  transition: 0.5s;
+}
+.dot.active {
+  background-color: #f2eaeafc;
+  transition: 0.5s;
+}
+header {
+  position: absolute;
+  z-index: 2000;
+  color: white;
+  width: 100%;
+  display: flex;
+  padding: 1em;
+  align-items: center;
+  justify-content: space-around;
+}
+header img {
+  width: 60%;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+nav ul li a:is(:hover, :focus) {
+  text-decoration: underline;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.social-links svg,
+i {
+  font-size: 1rem;
+}
+.search {
+  border-left: 1px solid rgba(255, 255, 255, 0.2118);
+  border-right: 1px solid rgba(255, 255, 255, 0.252);
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search svg {
+  font-size: 1rem;
+}
+@media (max-width: 960px) {
+  .desktop-navigation {
+    display: none;
+  }
+  .mobile-navigation {
+    display: flex;
+  }
+  nav {
+    position: fixed;
+    top: 10%;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000000;
+    transform: translateY(-5%);
+    opacity: 0;
+  }
+  .active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.4s;
+  }
+  nav ul {
+    display: grid;
+    width: 100%;
+    padding: 1em;
+  }
+  nav ul li {
+    padding: 0.4em;
+  }
+  nav ul li:hover {
+    border: 1px solid white;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+  }
+  .menu svg {
+    font-size: 1.5rem;
+  }
+  .search {
+    border: none;
+  }
+  .search svg {
+    color: white;
+  }
+}
