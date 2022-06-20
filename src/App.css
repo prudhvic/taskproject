@@ -160,6 +160,10 @@ i {
   font-size: 1rem;
 }
 @media (max-width: 960px) {
+  .content h1{
+    font-size:1.5rem;
+    
+  }
   .desktop-navigation {
     display: none;
   }
